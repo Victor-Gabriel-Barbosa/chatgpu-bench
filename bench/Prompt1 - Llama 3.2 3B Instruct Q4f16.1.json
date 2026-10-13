@@ -1,0 +1,26 @@
+{
+  "id": "1791907787982",
+  "title": "Leia o texto a seguir e extraia as informações ...",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Leia o texto a seguir e extraia as informações solicitadas.\n\n  Texto: “Marina mora em Uberlândia. Ela pediu 2 teclados, cada um por R$ 120,00, e 1 mouse por R$ 80,00. O pedido deve ter entrega prioritária.”\n\n  Retorne somente um JSON válido, sem bloco Markdown e sem texto antes ou depois. Use exatamente esta estrutura e estes nomes de campos:\n  {\n    \"cliente\": \"string\",\n    \"cidade\": \"string\",\n    \"itens\": [\n      {\"produto\": \"string\", \"quantidade\": 0, \"preco_unitario\": 0.00}\n    ],\n    \"total_pedido\": 0.00,\n    \"entrega_prioritaria\": true\n  }\n  Use números, e não textos, nos campos numéricos. Calcule o total do pedido. Não acrescente campos."
+    },
+    {
+      "role": "assistant",
+      "content": "```\n{\n  \"cliente\": \"Marina\",\n  \"cidade\": \"Uberlândia\",\n  \"itens\": [\n    {\n      \"produto\": \"Teclado\",\n      \"quantidade\": 2,\n      \"preco_unitario\": 120.00\n    },\n    {\n      \"produto\": \"Mouse\",\n      \"quantidade\": 1,\n      \"preco_unitario\": 80.00\n    }\n  ],\n  \"total_pedido\": 440.00,\n  \"entrega_prioritaria\": true\n}\n```",
+      "think": "",
+      "metrics": {
+        "tokensPerSecond": 26.6,
+        "completionTokens": 114,
+        "timeToFirstToken": 1.05,
+        "prefillTokensPerSecond": 216.3,
+        "promptTokens": 226,
+        "totalTokens": 340,
+        "elapsedTime": 5.39,
+        "vram_gb": 4.329151
+      }
+    }
+  ],
+  "updatedAt": 1791907787982
+}

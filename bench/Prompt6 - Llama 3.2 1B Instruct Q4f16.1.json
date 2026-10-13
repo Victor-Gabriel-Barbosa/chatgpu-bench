@@ -1,0 +1,26 @@
+{
+  "id": "1791905814782",
+  "title": "Analise a função TypeScript a seguir:\n\n  functi...",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Analise a função TypeScript a seguir:\n\n  function calcularMedia(valores: number[]): number {\n    let soma = 0;\n    for (let i = 0; i <= valores.length; i++) {\n      soma += valores[i];\n    }\n    return soma / valores.length;\n  }\n\n  A função tem problemas. Corrija-a para que calcule a média corretamente e retorne `0` quando o array estiver vazio.\n\n  Responda usando exatamente estas seções:\n  Problemas: explique brevemente os problemas encontrados.\n  Código corrigido: apresente a função completa em TypeScript dentro de um bloco de código.\n  Teste rápido: informe o resultado esperado para `[2, 4, 6]` e para `[]`."
+    },
+    {
+      "role": "assistant",
+      "content": "**Problemas da função original**\n\n1.  A função calcula a média corretamente, mas não retorne a média correta.\n2.  A função não tem como verificar se o array está vazio antes de tentar calcular a média.\n\n**Código corrigido**\n\n```typescript\nfunction calcularMedia(valores: number[]): number {\n    if (valores.length === 0) {\n        return 0;\n    }\n    \n    let soma = 0;\n    for (let i = 0; i < valores.length; i++) {\n        soma += valores[i];\n    }\n    \n    return soma / valores.length;\n}\n\n// Teste rápido\nconsole.log(calcularMedia([2, 4, 6]));  // Esperado resultado: 4.0\nconsole.log(calcularMedia([]));  // Esperado resultado: 0\n```\n\n**Explicação**\n\nA função original tinha dois problemas: \n\n1.  A função não verificava se o array estaria vazio antes de tentar calcular a média. Isso poderia ocorrer em qualquer momento, não apenas quando o array estiver vazio.\n\n2.  A função não tinha como verificar se o array estaria vazio antes de tentar calcular a média. Isso poderia ocorrer em qualquer momento, não apenas quando o array estiver vazio.\n\nCom a correção do problema 1, a função agora tem como verificar se o array está vazio antes de tentar calcular a média. Além disso, a função agora tem como calcular a média corretamente.",
+      "think": "",
+      "metrics": {
+        "tokensPerSecond": 14.1,
+        "completionTokens": 337,
+        "timeToFirstToken": 1.03,
+        "prefillTokensPerSecond": 187.6,
+        "promptTokens": 193,
+        "totalTokens": 530,
+        "elapsedTime": 25.14,
+        "vram_gb": 4.559425
+      }
+    }
+  ],
+  "updatedAt": 1791905814782
+}

@@ -1,0 +1,26 @@
+{
+  "id": "1791904991476",
+  "title": "Escreva uma função em TypeScript chamada `remov...",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Escreva uma função em TypeScript chamada `removeDuplicados` com a assinatura `function removeDuplicados(valores: string[]): string[]`.\n\n  A função deve remover valores repetidos exatamente iguais, preservar a ordem da primeira ocorrência e não alterar as strings. Não use bibliotecas externas.\n\n  Retorne somente código TypeScript, sem Markdown nem explicações. Inclua a função e três verificações executáveis com `console.assert` para estes casos:\n  1. `['ana', 'bia', 'ana', 'caio', 'bia']` deve produzir `['ana', 'bia', 'caio']`.\n  2. `[]` deve produzir `[]`.\n  3. `['x']` deve produzir `['x']`."
+    },
+    {
+      "role": "assistant",
+      "content": "```typescript\n/**\n * Remove duplicate values from an array, preserving the order of the first occurrence.\n * \n * @param {string[]} values - The array to process.\n * @returns {string[]} A new array with duplicates removed and original order preserved.\n */\nfunction removeDuplicados(values: string[]): string[] {\n    const uniqueValues = Array.from(new Set(values)); // Use Set to get unique values while preserving order\n    return uniqueValues; // Return the array with duplicates removed\n}\n\n// Verificações\nconsole.assert(JSON.stringify(removeDuplicados([\"ana\", \"bia\", \"ana\", \"caio\", \"bia\"])) === JSON.stringify([\"ana\", \"bia\", \"caio\"])); // Expected output: [\"ana\", \"bia\", \"caio\"]\nconsole.assert(JSON.stringify(removeDuplicados([])) === JSON.stringify([])); // Expected output: []\nconsole.assert(JSON.stringify(removeDuplicados([\"x\"])) === JSON.stringify([\"x\"])); // Expected output: [\"x\"]\n```",
+      "think": "",
+      "metrics": {
+        "tokensPerSecond": 33.6,
+        "completionTokens": 204,
+        "timeToFirstToken": 0.23,
+        "prefillTokensPerSecond": 872.8,
+        "promptTokens": 199,
+        "totalTokens": 403,
+        "elapsedTime": 6.42,
+        "vram_gb": 2.670326
+      }
+    }
+  ],
+  "updatedAt": 1791904991476
+}

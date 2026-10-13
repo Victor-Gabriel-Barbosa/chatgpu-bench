@@ -1,0 +1,26 @@
+{
+  "id": "1791909001615",
+  "title": "Leia o texto a seguir e extraia as informações ...",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Leia o texto a seguir e extraia as informações solicitadas.\n\n  Texto: “Marina mora em Uberlândia. Ela pediu 2 teclados, cada um por R$ 120,00, e 1 mouse por R$ 80,00. O pedido deve ter entrega prioritária.”\n\n  Retorne somente um JSON válido, sem bloco Markdown e sem texto antes ou depois. Use exatamente esta estrutura e estes nomes de campos:\n  {\n    \"cliente\": \"string\",\n    \"cidade\": \"string\",\n    \"itens\": [\n      {\"produto\": \"string\", \"quantidade\": 0, \"preco_unitario\": 0.00}\n    ],\n    \"total_pedido\": 0.00,\n    \"entrega_prioritaria\": true\n  }\n  Use números, e não textos, nos campos numéricos. Calcule o total do pedido. Não acrescente campos."
+    },
+    {
+      "role": "assistant",
+      "content": "\n\n{\n  \"cliente\": \"Marina\",\n  \"cidade\": \"Uberlândia\",\n  \"itens\": [\n    {\"produto\": \"teclado\", \"quantidade\": 2, \"preco_unitario\": 120.00},\n    {\"produto\": \"mouse\", \"quantidade\": 1, \"preco_unitario\": 80.00}\n  ],\n  \"total_pedido\": 320.00,\n  \"entrega_prioritaria\": true\n}",
+      "think": "\nOkay, let's see. The user provided a text in Portuguese and wants me to extract specific information into a JSON structure. The text says Marina lives in Uberlândia. She ordered 2 keyboards at R$120 each and 1 mouse for R$80. The delivery should be priority.\n\nFirst, I need to parse the text correctly. The client is Marina, and the city is Uberlândia. The items are two teclados (keyboards) and one mouse. Wait, the original text says \"2 teclados, cada um por R$ 120,00, e 1 mouse por R$ 80,00.\" So, two keyboards at 120 each, and one mouse at 80. The total is 2*120 + 1*80 = 240 + 80 = 320. So the total_pedido should be 320.00.\n\nThe JSON structure requires the client, city, items array with product, quantity, and unit price. Each item is an object in the array. The delivery is prioritária, so that's true. The numbers need to be numeric, not text. So the JSON should have those fields. Let me make sure I didn't miss any details. The items are keyboards and mouse. Quantities are 2 and 1. Prices 120 and 80. Total is 320.00. Delivery is true. That's all. No other fields. The JSON should look like the example provided, with the correct numbers.\n",
+      "metrics": {
+        "tokensPerSecond": 8.6,
+        "completionTokens": 447,
+        "timeToFirstToken": 1.26,
+        "prefillTokensPerSecond": 181.2,
+        "promptTokens": 228,
+        "totalTokens": 675,
+        "elapsedTime": 53.48,
+        "vram_gb": 4.768459
+      }
+    }
+  ],
+  "updatedAt": 1791909001615
+}

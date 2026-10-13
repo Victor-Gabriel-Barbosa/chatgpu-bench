@@ -1,0 +1,26 @@
+{
+  "id": "1791908834307",
+  "title": "Analise a função TypeScript a seguir:\n\n  functi...",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Analise a função TypeScript a seguir:\n\n  function calcularMedia(valores: number[]): number {\n    let soma = 0;\n    for (let i = 0; i <= valores.length; i++) {\n      soma += valores[i];\n    }\n    return soma / valores.length;\n  }\n\n  A função tem problemas. Corrija-a para que calcule a média corretamente e retorne `0` quando o array estiver vazio.\n\n  Responda usando exatamente estas seções:\n  Problemas: explique brevemente os problemas encontrados.\n  Código corrigido: apresente a função completa em TypeScript dentro de um bloco de código.\n  Teste rápido: informe o resultado esperado para `[2, 4, 6]` e para `[]`."
+    },
+    {
+      "role": "assistant",
+      "content": "**Problemas:**\nO problema encontrado é que o for loop não deve ter condição `i <= valores.length` porque, em TypeScript, o índice de um array começa em 0 e vai até o tamanho do array, não além. Isso significa que, no último iteração do loop, `valores[i]` será `undefined` porque `i` é maior que o tamanho do array. Além disso, a função não retorna 0 quando o array estiver vazio, mas sim uma divisão por zero quando o array estiver vazio.\n\n**Código corrigido:**\n```typescript\nfunction calcularMedia(valores: number[]): number {\n  let soma = 0;\n  if (valores.length > 0) {\n    for (let i = 0; i < valores.length; i++) {\n      soma += valores[i];\n    }\n  }\n  return soma / valores.length || 0;\n}\n```\n\n**Teste rápido:**\nPara `[2, 4, 6]`, o resultado esperado é `4.0` porque a média de 2, 4 e 6 é 4. Para `[]`, o resultado esperado é `0` porque a média de um array vazio é 0.",
+      "think": "",
+      "metrics": {
+        "tokensPerSecond": 27.9,
+        "completionTokens": 269,
+        "timeToFirstToken": 0.91,
+        "prefillTokensPerSecond": 211.3,
+        "promptTokens": 193,
+        "totalTokens": 462,
+        "elapsedTime": 10.73,
+        "vram_gb": 5.660473
+      }
+    }
+  ],
+  "updatedAt": 1791908834307
+}

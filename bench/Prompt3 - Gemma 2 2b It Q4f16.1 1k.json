@@ -1,0 +1,26 @@
+{
+  "id": "1791907468802",
+  "title": "Uma papelaria comprou 24 cadernos por R$ 8,50 c...",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Uma papelaria comprou 24 cadernos por R$ 8,50 cada. Vendeu 15 cadernos pelo preço normal de R$ 12,00 cada e vendeu os 9 restantes com desconto de 50% sobre o preço normal.\n\n  Calcule:\n  1. O custo total da compra.\n  2. A receita obtida com os 15 cadernos vendidos pelo preço normal.\n  3. A receita obtida com os 9 cadernos vendidos com desconto.\n  4. A receita total.\n  5. O lucro final, considerando receita total menos custo total.\n\n  Mostre a conta de cada item e o resultado em reais, com duas casas decimais. Não considere outros custos ou impostos."
+    },
+    {
+      "role": "assistant",
+      "content": "Aqui está o cálculo da situação da papelaria:\n\n**1. Custo total da compra:**\n\n* Número de cadernos comprados: 24\n* Preço de cada cuaderno: R$ 8,50\n* Custo total da compra: 24 * R$ 8,50 = R$ 204,00\n\n**2. Receita com os 15 cadernos vendidos a R$ 12,00:**\n\n* Número de cadernos vendidos: 15\n* Preço de cada cuaderno vendido: R$ 12,00\n* Receita com os 15 cadernos: 15 * R$ 12,00 = R$ 180,00\n\n**3. Receita com os 9 cadernos com desconto de 50%:**\n\n* Número de cadernos com desconto: 9\n* Preço de cada cuaderno com desconto: R$ 12,00 * (1 - 50%) = R$ 6,00\n* Receita com os 9 cadernos com desconto: 9 * R$ 6,00 = R$ 54,00\n\n**4. Receita total:**\n\n* Receita com os 15 cadernos: R$ 180,00\n* Receita com os 9 cadernos com desconto: R$ 54,00\n* Total de receita: R$ 180,00 + R$ 54,00 = R$ 234,00\n\n**5. Lucro final:**\n\n* Custo total da compra: R$ 204,00\n* Receita total: R$ 234,00\n* Lucro final: R$ 234,00 - R$ 204,00 = R$ 30,00\n\n\n**Resumidamente:**\n\n* 1. Custo total da compra: R$ 204,00\n* 2. Receita com os 15 cadernos vendidos: R$ 180,00\n* 3. Receita com os 9 cadernos com desconto: R$ 54,00\n* 4. Receita total: R$ 234,00\n* 5. Lucro final: R$ 30,00\n\n\n",
+      "think": "",
+      "metrics": {
+        "tokensPerSecond": 10.7,
+        "completionTokens": 524,
+        "timeToFirstToken": 0.8,
+        "prefillTokensPerSecond": 216.6,
+        "promptTokens": 173,
+        "totalTokens": 697,
+        "elapsedTime": 49.94,
+        "vram_gb": 4.178772
+      }
+    }
+  ],
+  "updatedAt": 1791907468802
+}

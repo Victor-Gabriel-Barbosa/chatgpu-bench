@@ -1,0 +1,26 @@
+{
+  "id": "1791907533711",
+  "title": "Resuma o texto abaixo sem adicionar informações...",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Resuma o texto abaixo sem adicionar informações externas.\n\n  Texto:\n  “Executar um modelo de linguagem localmente no navegador significa baixar os arquivos do modelo e realizar a geração de respostas no próprio dispositivo, usando recursos como a GPU por meio de tecnologias web compatíveis. Essa abordagem pode reduzir a necessidade de enviar cada pergunta a um servidor remoto e pode funcionar sem uma conexão contínua depois que os arquivos necessários estiverem disponíveis. Porém, o desempenho depende do hardware, do tamanho do modelo e da memória disponível. Modelos maiores podem gerar respostas melhores em algumas tarefas, mas também podem demorar mais para iniciar, consumir mais recursos ou não funcionar em determinados dispositivos. A execução local, por si só, não garante privacidade absoluta: isso também depende de como a aplicação trata os dados e de quais serviços externos utiliza.”\n\n  Use exatamente este formato:\n  Resumo: duas frases, com no máximo 40 palavras no total.\n  Pontos-chave:\n  - três tópicos, cada um com no máximo 10 palavras."
+    },
+    {
+      "role": "assistant",
+      "content": "## Resumo:\n\n**Resumo:** Executar modelos de linguagem localmente em navegadores oferece autonomia e redução de dependência de servidores. Essa solução depende da capacidade do dispositivo, da complexidade do modelo e da segurança da aplicação.\n\n**Pontos-chave:**\n\n- Modelo de linguagem local.\n- Baixar e processar em dispositivo.\n- Conexão com servidor.\n- Desempenho dependente de hardware. \n- Privacidade e segurança. \n",
+      "think": "",
+      "metrics": {
+        "tokensPerSecond": 18.1,
+        "completionTokens": 98,
+        "timeToFirstToken": 0.62,
+        "prefillTokensPerSecond": 357.7,
+        "promptTokens": 220,
+        "totalTokens": 318,
+        "elapsedTime": 6.08,
+        "vram_gb": 5.601395
+      }
+    }
+  ],
+  "updatedAt": 1791907533711
+}
