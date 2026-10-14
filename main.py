@@ -96,7 +96,7 @@ def main():
 
       # Exporta os resultados do modelo  
       pyautogui.click(1, 1)  
-      pyautogui.press("tab", presses=5)  
+      pyautogui.press("tab", presses=6)  
       pyautogui.press("enter", presses=2)  
       time.sleep(1)
 

@@ -23,7 +23,7 @@ def gerar_graficos_svg():
     nome_arquivo = metrica.lower().replace(' ', '_').replace('(', '').replace(')', '').replace('/', '_')
     caminho_svg = f'./resultados/svg/{nome_arquivo}.svg'
 
-    plt.savefig(caminho_svg, format='svg', bbox_inches='tight')
+    plt.savefig(caminho_svg, format='svg', bbox_inches='tight', transparent=True)
     plt.close()
     print(f"Salvo em: {caminho_svg}")
     
