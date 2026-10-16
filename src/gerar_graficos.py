@@ -5,10 +5,10 @@ import pandas as pd
 import seaborn as sns
 
 
-def gerar_graficos_svg():
-  plt.rcParams['svg.fonttype'] = 'none'
-  os.makedirs('./resultados/svg', exist_ok=True)
-  df = pd.read_csv('./resultados/metricas.csv')
+def gerar_graficos_pdf():
+  plt.rcParams['pdf.fonttype'] = 42
+  os.makedirs('./bench/resultados/pdf', exist_ok=True)
+  df = pd.read_csv('./bench/resultados/metricas.csv')
   metricas = df.select_dtypes(include=['float64', 'int64']).columns.tolist()
   sns.set_theme(style="whitegrid")
 
@@ -21,11 +21,11 @@ def gerar_graficos_svg():
     plt.tight_layout()
 
     nome_arquivo = metrica.lower().replace(' ', '_').replace('(', '').replace(')', '').replace('/', '_')
-    caminho_svg = f'./resultados/svg/{nome_arquivo}.svg'
+    caminho_pdf = f'./bench/resultados/pdf/{nome_arquivo}.pdf'
 
-    plt.savefig(caminho_svg, format='svg', bbox_inches='tight', transparent=True)
+    plt.savefig(caminho_pdf, format='pdf', bbox_inches='tight', transparent=True)
     plt.close()
-    print(f"Salvo em: {caminho_svg}")
+    print(f"Salvo em: {caminho_pdf}")
     
 if __name__ == "__main__":
-  gerar_graficos_svg()
+  gerar_graficos_pdf()

@@ -6,7 +6,7 @@ import pyautogui
 import pyperclip
 
 from src.config import altura, largura, modelos, pasta_exportacao, pause, prompts
-from src.gerar_graficos import gerar_graficos_svg
+from src.gerar_graficos import gerar_graficos_pdf
 from src.medir_vram import get_vram_gb
 from src.processar_resultados import processar_benchmarks
 from src.salvar_vram import salvar_vram
@@ -22,7 +22,7 @@ def esperar_modelo():
     if "Carregando modelo..." not in pyperclip.paste():
       break
 
-def main():
+def main():  # sourcery skip: extract-duplicate-method
   # Abre o navegador pelo executar
   webbrowser.open("https://chatgpu-nu.vercel.app/")
 
@@ -119,7 +119,7 @@ def main():
   time.sleep(5)
   processar_benchmarks()
   time.sleep(5)
-  gerar_graficos_svg()
+  gerar_graficos_pdf()
   
 if __name__ == "__main__":
   main()

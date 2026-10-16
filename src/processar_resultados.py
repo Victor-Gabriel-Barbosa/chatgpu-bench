@@ -24,7 +24,7 @@ def formatar_nome_arquivo(nome):
     nome_limpo = nome_limpo.replace("__", "_")
   return nome_limpo.strip("_").lower()
 
-def processar_benchmarks(pasta_bench="bench", pasta_resultados="resultados"):
+def processar_benchmarks(pasta_bench="bench/testes", pasta_resultados="bench/resultados"):
   if not os.path.exists(pasta_bench):
     print(f"Erro: A pasta '{pasta_bench}' não foi encontrada.")
     return

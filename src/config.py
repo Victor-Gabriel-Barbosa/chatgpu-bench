@@ -1,6 +1,6 @@
 import pyautogui
 
-pasta_exportacao = "C:/Users/victo/Documents/GitHub/chatgpu-bench/teste"
+pasta_exportacao = "C:/Users/victo/Documents/GitHub/chatgpu-bench/bench/testes"
 
 pause = 0.3
 

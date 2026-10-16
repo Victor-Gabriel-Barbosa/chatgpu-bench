@@ -28,6 +28,10 @@ def get_vram_gb():
   for d in dados:
     m = re.match(r"pid_(\d+)_", d["Name"])
     if m and int(m[1]) in pids:
+      pid = int(m[1])
+      processo = psutil.Process(pid).name()
+
+      print(f"PID: {pid} | Processo: {processo} - {d["DedicatedUsage"]}")
       total_bytes += d["DedicatedUsage"]
 
   return round(total_bytes / 1000**3, 6)
