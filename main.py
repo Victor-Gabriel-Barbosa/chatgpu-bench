@@ -5,11 +5,11 @@ import webbrowser
 import pyautogui
 import pyperclip
 
-from medir_vram import get_vram_gb
-from salvar_vram import salvar_vram
 from src.config import altura, largura, modelos, pasta_exportacao, pause, prompts
 from src.gerar_graficos import gerar_graficos_svg
+from src.medir_vram import get_vram_gb
 from src.processar_resultados import processar_benchmarks
+from src.salvar_vram import salvar_vram
 
 pyautogui.pause = pause
 
@@ -51,7 +51,7 @@ def main():
     
     # Seleciona o modelo atual dinamicamente
     pyautogui.press("tab")
-    pyautogui.write(modelo, interval=0.03)
+    pyautogui.write(modelo, interval=0.02)
     pyautogui.press("tab", presses=3)
     pyautogui.press("space")
     
@@ -105,9 +105,9 @@ def main():
       caminho_completo = os.path.join(pasta_exportacao, nome_arquivo)
       
       # Salva o arquivo no caminho da pasta exportação
-      pyautogui.write(nome_arquivo, interval=0.03)
+      pyautogui.write(nome_arquivo, interval=0.01)
       pyautogui.hotkey("ctrl", "l")  
-      pyautogui.write(pasta_exportacao, interval=0.03)
+      pyautogui.write(pasta_exportacao, interval=0.01)
       pyautogui.press("enter")
       time.sleep(1)
       pyautogui.hotkey("alt", "l") 

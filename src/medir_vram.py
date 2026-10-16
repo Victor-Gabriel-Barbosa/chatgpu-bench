@@ -30,7 +30,7 @@ def get_vram_gb():
     if m and int(m[1]) in pids:
       total_bytes += d["DedicatedUsage"]
 
-  return round(total_bytes / 1024**3, 6)
+  return round(total_bytes / 1000**3, 6)
 
 if __name__ == "__main__":
   vram_gb = get_vram_gb()
