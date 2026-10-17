@@ -1,6 +1,10 @@
+from pathlib import Path
+
 import pyautogui
 
-pasta_exportacao = "C:/Users/victo/Documents/GitHub/chatgpu-bench/bench/testes"
+pasta_raiz = Path(__file__).resolve().parent.parent
+pasta_exportacao = str(pasta_raiz / "bench" / "testes")
+pasta_resultados = str(pasta_raiz / "bench" / "resultados")
 
 pause = 0.3
 

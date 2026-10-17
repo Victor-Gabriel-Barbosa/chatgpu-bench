@@ -5,13 +5,26 @@ import webbrowser
 import pyautogui
 import pyperclip
 
-from src.config import altura, largura, modelos, pasta_exportacao, pause, prompts
+from src.config import (
+  altura,
+  largura,
+  modelos,
+  pasta_exportacao,
+  pasta_raiz,
+  pasta_resultados,
+  pause,
+  prompts,
+)
 from src.gerar_graficos import gerar_graficos_pdf
 from src.medir_vram import get_vram_gb
 from src.processar_resultados import processar_benchmarks
 from src.salvar_vram import salvar_vram
 
 pyautogui.pause = pause
+
+os.makedirs(str(pasta_raiz), exist_ok=True)
+os.makedirs(pasta_resultados, exist_ok=True)
+os.makedirs(pasta_exportacao, exist_ok=True)
 
 def esperar_modelo(): 
   while True:
@@ -34,6 +47,13 @@ def main():  # sourcery skip: extract-duplicate-method
   time.sleep(1)
   pyautogui.press("f11")
   time.sleep(2)
+  
+  pyautogui.hotkey("ctrl", "a")
+  pyautogui.hotkey("ctrl", "c")
+  time.sleep(1)
+  if "Pesquisar conversas..." not in pyperclip.paste():
+    pyautogui.hotkey("ctrl", "b")
+    time.sleep(1)
 
   # Itera sobre cada modelo
   for modelo in modelos:

@@ -3,6 +3,8 @@ import json
 import os
 from glob import glob
 
+from src.config import pasta_exportacao, pasta_resultados
+
 # Dicionário com os nomes para as métricas
 METRICAS = {
   "tokensPerSecond": "Geração (tokens/s)",
@@ -24,15 +26,15 @@ def formatar_nome_arquivo(nome):
     nome_limpo = nome_limpo.replace("__", "_")
   return nome_limpo.strip("_").lower()
 
-def processar_benchmarks(pasta_bench="bench/testes", pasta_resultados="bench/resultados"):
-  if not os.path.exists(pasta_bench):
-    print(f"Erro: A pasta '{pasta_bench}' não foi encontrada.")
+def processar_benchmarks():
+  if not os.path.exists(pasta_exportacao):
+    print(f"Erro: A pasta '{pasta_exportacao}' não foi encontrada.")
     return
 
-  arquivos_json = glob(os.path.join(pasta_bench, '*.json'))
+  arquivos_json = glob(os.path.join(pasta_exportacao, '*.json'))
 
   if not arquivos_json:
-    print(f"Nenhum ficheiro JSON encontrado na pasta '{pasta_bench}'.")
+    print(f"Nenhum ficheiro JSON encontrado na pasta '{pasta_exportacao}'.")
     return
 
   os.makedirs(pasta_resultados, exist_ok=True)
@@ -77,7 +79,6 @@ def processar_benchmarks(pasta_bench="bench/testes", pasta_resultados="bench/res
     return
 
   chaves_originais = sorted(todas_chaves_metricas)
-
   caminho_todas_metricas = os.path.join(pasta_resultados, 'metricas.csv')
 
   with open(caminho_todas_metricas, 'w', encoding='utf-8', newline='') as f:
